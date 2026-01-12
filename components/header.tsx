@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button"
 import { MapPin, LogOut } from "lucide-react"
 
 interface HeaderProps {
-  role: "user" | "courier"
-  onChangeRole: () => void
+  // role: "user" | "courier"
+  // onChangeRole: () => void
+  role: "user" | "courier" | "company"; onChangeRole: () => void;
 }
 
 export default function Header({ role, onChangeRole }: HeaderProps) {
