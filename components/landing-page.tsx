@@ -18,7 +18,7 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
   return (
     <div className = "min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       {/* Navigation */}
-      <nav className = "sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className = "sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border py-2">
       <div className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
       <div className="inline-flex items-center whitespace-nowrap">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl item-center">
