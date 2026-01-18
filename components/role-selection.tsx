@@ -26,11 +26,23 @@ export default function RoleSelection({ onSelectRole, onBack, onSignIn }: RoleSe
       )}
       <div className="w-full max-w-4xl">
         <div className="mb-12 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-secondary text-primary-foreground">
-            <MapPin className="h-8 w-8" />
+          <div className="inline-flex items-center whitespace-nowrap">
+            <div className="mx-auto mb-2 flex h-24 w-24 items-center justify-center rounded-2xl item-center">
+            {/* <MapPin className="h-8 w-8" /> */}
+             <div className = "flex justify-center items-center">
+              <img
+                src       = "/basenalu_logo.png"
+                alt       = "Customer and Courier Connection"
+                className = "max-w-sm w-full h-auto  transition-transform duration-300"
+              />
+            </div>
           </div>
-          <h1 className="text-4xl font-bold text-foreground">CourierFlow</h1>
-          <p className="mt-2 text-lg text-muted-foreground">Fast, reliable courier service at your fingertips</p>
+          <div className="ml-2">
+            <h1 className="text-left text-4xl font-bold text-foreground">Basenalu</h1>
+            <p className=" text-lg text-muted-foreground">Fast, reliable courier service at your fingertips</p>
+          </div>
+          </div>
+          
           {onSignIn && ( // Added sign in prompt
             <p className="mt-4 text-sm text-muted-foreground">
               Already have an account?{" "}

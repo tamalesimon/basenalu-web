@@ -62,6 +62,18 @@ export default function SignIn({ onBack, onComplete, onRegister }: SignInProps) 
     )
   }
 
+  const handleBorderColor = (role:string) => {
+    if (role == "user") return "border-secondary";
+    if (role == "courier") return "border-primary";
+    if (role == "company") return "border-amber-500"
+  }
+
+  const handleTabButtonColor = (role:string) => {
+    if (role == "user") return "bg-secondary hover:bg-secondary/90";
+    if (role == "courier") return "bg-primary hover:bg-primary/90";
+    if (role == "company") return "bg-amber-500 hover:bg-amber-600"
+  }
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-primary/5 to-secondary/5 px-4 py-8">
       <div className="w-full max-w-md">
@@ -73,10 +85,10 @@ export default function SignIn({ onBack, onComplete, onRegister }: SignInProps) 
           Back
         </button>
 
-        <Card className="p-8 border-2 border-border/50 shadow-xl bg-card/80 backdrop-blur-sm">
+        <Card className={`p-8 border-2 border-border/50 shadow-xl bg-card/80 backdrop-blur-sm border-2 border-border ${handleBorderColor(role)}`}>
           <div className="mb-8 text-center">
             <h1 className="text-3xl font-bold text-foreground">Welcome Back</h1>
-            <p className="mt-2 text-muted-foreground">Sign in to your CourierFlow account</p>
+            <p className="mt-2 text-muted-foreground">Sign in to your <b><u>Basenalu</u></b> account</p>
           </div>
 
           {/* Role Selector */}
@@ -88,7 +100,10 @@ export default function SignIn({ onBack, onComplete, onRegister }: SignInProps) 
                   setRole(r)
                   if (r !== "user") setLoginType("email")
                 }}
-                className={`py-2 text-xs font-semibold rounded-md transition-all capitalize ${
+                // className={`py-2 text-xs font-semibold rounded-md transition-all capitalize ${
+                //   role === r ? "bg-background text-primary shadow-sm" : "text-muted-foreground hover:text-foreground"
+                // }`}
+                  className={`py-2 text-xs font-semibold rounded-md transition-all capitalize ${
                   role === r ? "bg-background text-primary shadow-sm" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -98,7 +113,7 @@ export default function SignIn({ onBack, onComplete, onRegister }: SignInProps) 
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Login Type Switcher (only for user) */}
+            {/* Login Type Switcher (only for user)
             {role === "user" && (
               <div className="flex justify-center gap-4 mb-2">
                 <button
@@ -120,7 +135,7 @@ export default function SignIn({ onBack, onComplete, onRegister }: SignInProps) 
                   Mobile
                 </button>
               </div>
-            )}
+            )} */}
 
             {/* Identifier Input */}
             <div className="space-y-2">
@@ -182,7 +197,7 @@ export default function SignIn({ onBack, onComplete, onRegister }: SignInProps) 
               </div>
             )}
 
-            <Button type="submit" className="w-full h-11 text-base bg-primary hover:bg-primary/90 transition-all">
+            <Button type="submit" className={`w-full h-11 text-base ${handleTabButtonColor(role)}`}>
               Sign In
             </Button>
           </form>

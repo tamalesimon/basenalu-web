@@ -118,7 +118,16 @@ export default function CourierDashboard() {
     return distance <= 5
   })
 
-  const [acceptedDeliveries, setAcceptedDeliveries] = useState([
+  const [acceptedDeliveries, setAcceptedDeliveries] = useState<Array<{
+    id: string
+    packageName: string
+    from: string
+    to: string
+    status: "accepted" | "in-transit" | "completed"
+    progress: number
+    customerName: string
+    earnings: number
+  }>>([
     {
       id: "101",
       packageName: "Electronics",
