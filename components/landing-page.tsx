@@ -316,7 +316,7 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
       <p       className = "text-xl text-foreground/60 mb-8">
             Join thousands of customers and couriers already using <b><u>Basenalu</u></b> for fast, reliable deliveries.
           </p>
-          <Button onClick= {} size = "lg" className = "rounded-full gap-2">
+          <Button onClick= {handleGetStarted} size = "lg" className = "rounded-full gap-2">
           Get     Started Now <ArrowRight className = "w-4 h-4" />
           </Button>
         </div>
