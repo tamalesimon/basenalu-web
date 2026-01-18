@@ -90,7 +90,7 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
             </div>
             <div className = "flex gap-8 pt-8">
               <div>
-                <div className = "text-2xl font-bold text-primary">2M+</div>
+                <div className = "text-2xl font-bold text-primary">100+</div>
                 <p   className = "text-sm text-foreground/60">Active Deliveries</p>
               </div>
               <div>
@@ -98,7 +98,7 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
                 <p   className = "text-sm text-foreground/60">On-time Rate</p>
               </div>
               <div>
-                <div className = "text-2xl font-bold text-primary">50K+</div>
+                <div className = "text-2xl font-bold text-primary">30+</div>
                 <p   className = "text-sm text-foreground/60">Trusted Couriers</p>
               </div>
             </div>
@@ -293,9 +293,13 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
       <div     className = "max-w-7xl mx-auto">
       <div     className = "grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { label: "Cities", value: "150+" },
-              { label: "Deliveries", value: "2M+" },
-              { label: "Couriers", value: "50K+" },
+              // { label: "Cities", value: "150+" },
+              // { label: "Deliveries", value: "2M+" },
+              // { label: "Couriers", value: "50K+" },
+              // { label: "Rating", value: "4.9★" },
+              { label: "Cities", value: "10+" },
+              { label: "Deliveries", value: "100+" },
+              { label: "Couriers", value: "30+" },
               { label: "Rating", value: "4.9★" },
             ].map((stat, idx) => (
               <div key       = {idx}>
