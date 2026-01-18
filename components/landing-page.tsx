@@ -7,6 +7,14 @@ import { Clock, Shield, ArrowRight, Zap, TrendingUp } from "lucide-react"
 export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: () => void; onSignIn: () => void }) {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null)
 
+  const handleGetStarted = () => {
+    return null;
+  }
+
+  const handleSignIn = () => {
+    return null;
+  }
+
   return (
     <div className = "min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       {/* Navigation */}
@@ -41,13 +49,13 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
           <div className = "flex items-center gap-4">
             <Button
               variant   = "ghost"
-              onClick   = "{onSignIn}"
+              onClick   = {handleSignIn}
               className = "hidden sm:inline-flex hover:bg-muted transition-colors font-medium"
             >
               Sign In
             </Button>
             <Button
-              onClick   = "{onGetStarted}"
+              onClick   = {handleGetStarted}
               className = "rounded-full px-6 bg-primary hover:bg-primary/90 transition-all shadow-md hover:shadow-lg"
             >
               Get Started
@@ -73,7 +81,7 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
               Connect with verified couriers near you. Track your deliveries in real-time. Ship anything, anytime.
             </p>
             <div    className = "flex flex-col sm:flex-row gap-4 pt-4">
-            <Button onClick = "{onGetStarted}" size = "lg" className = "rounded-full gap-2">
+            <Button onClick = {handleGetStarted} size = "lg" className = "rounded-full gap-2">
             Start   Delivering <ArrowRight className = "w-4 h-4" />
               </Button>
               <Button variant = "outline" size = "lg" className = "rounded-full bg-transparent">
@@ -308,7 +316,7 @@ export default function LandingPage({ onGetStarted, onSignIn }: { onGetStarted: 
       <p       className = "text-xl text-foreground/60 mb-8">
             Join thousands of customers and couriers already using <b><u>Basenalu</u></b> for fast, reliable deliveries.
           </p>
-          <Button onClick= "{onGetStarted}" size = "lg" className = "rounded-full gap-2">
+          <Button onClick= {} size = "lg" className = "rounded-full gap-2">
           Get     Started Now <ArrowRight className = "w-4 h-4" />
           </Button>
         </div>
