@@ -13,6 +13,12 @@ interface MapViewProps {
   selectedOrder?: TrackedOrder | null
 }
 
+declare global {
+  interface Window {
+    L: any
+  }
+}
+
 export default function MapView({ orders, onSelectOrder, selectedOrder }: MapViewProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null)
   const mapRef = useRef<any>(null)
@@ -20,7 +26,7 @@ export default function MapView({ orders, onSelectOrder, selectedOrder }: MapVie
 
   useEffect(() => {
     // Load Leaflet library dynamically
-    if (!window.L) {
+    if (!(window as any).L) {
       const link = document.createElement("link")
       link.rel = "stylesheet"
       link.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
